@@ -1,0 +1,13 @@
+all: makejson
+
+
+makejon: makejson.o variable.o
+	gcc -o makejson makejson.o variable.o -luuid
+
+makejson.o: makejson.c variable.h
+	gcc -o makejson.o -c makejson.c -luuid
+
+variable.o: variable.c variable.h
+	gcc -o variable.o -c variable.c -luuid
+
+clean: rm *.o

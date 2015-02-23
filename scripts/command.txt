@@ -1,0 +1,10 @@
+## changer le répertoire des fichiers de données (result) référencés:
+grep -rl 'file:///home/isi-projets/' ./ | xargs sed -i 's/isi-projets\/sensorNanny\/data\/vaimos\/30mn-files/isi-projets\/sensorNanny\/data\/archive\/vaimos\/swe\/results/g'
+
+## changer l'url de la procedure
+# http://www.flakey.org/register/process/scales34.xml#platform_number
+### devient
+# http://isi.ifremer.fr/snanny-sostServer/record/c6fad940-5413-4c59-a98d-7ff4855301b4
+grep -rl 'http://www.flakey.org/register/process/scales34.xml#platform_number' ./ | xargs sed -i 's/http:\/\/www\.flakey\.org\/register\/process\/scales34\.xml#platform_number/http\:\/\/isi\.ifremer\.fr\/snanny-sostServer\/record\/c6fad940-5413-4c59-a98d-7ff4855301b4/g'
+
+
